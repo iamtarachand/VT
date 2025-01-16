@@ -1,0 +1,60 @@
+decrypter = "packager"
+tag = ""
+tag_sd = ""
+
+[arguments]
+
+[aria2c]
+file_allocation = 'none'  # Fast allocation
+
+[cdm]
+# Designate which Widevine Content Decryption Module to use for decryption
+default = 'generic_4464_l3'
+
+[credentials]
+
+[credentials.Netflix]
+profile = ['email', 'password']
+
+[credentials.DisneyPlus]
+profile = ['email', 'password']
+
+[directories]
+#downloads = "~/Downloads/vinetrimmer"
+
+[headers]
+User-Agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36"
+
+[[key_vaults]]
+type = "local"
+name = "Local"
+path = "{data_dir}/key_store.db"
+
+[output_template]
+movies = "{title}.{year}.{quality}.{source}.WEB-DL.{audio}.{video}-{tag}"
+series = "{title}.{season_episode}.{episode_name}.{quality}.{source}.WEB-DL.{audio}.{video}-{tag}"
+use_last_audio = false
+
+[profiles]
+Netflix = 'profile'
+Amazon = 'profile'
+Peacock = 'profile'
+ParamountPlus = 'profile'
+DisneyPlus = 'profile'
+Hulu = 'profile'
+AppleTVPlus = 'profile'
+
+[proxies]
+#us = "http://username:password@example.com:8080"
+
+[nordvpn]
+
+# Remote CDM API to use for decryption
+[[cdm_api]]
+name = "API"
+host = "https://api.example.com"
+key = "xxx"
+device = "xxx"
+type = ""  # ANDROID or CHROME
+system_id = 1234
+security_level = 1

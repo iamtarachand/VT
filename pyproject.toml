@@ -1,0 +1,67 @@
+[build-system]
+requires = ['poetry-core>=1.0.0']
+build-backend = 'poetry.core.masonry.api'
+
+[tool.poetry]
+name = 'vinetrimmer'
+version = '0.1.0'
+description = 'The most convenient command-line program to download videos from Widevine DRM-protected video platforms.'
+authors = [
+    'PHOENiX <rlaphoenix@pm.me>',
+    'nyuszika7h <nyuszika7h@gmail.com>',
+    'Mnml <22942379+mnmll@users.noreply.github.com>',
+    'shirtjs <2660574+shirt-dev@users.noreply.github.com>'
+]
+readme = 'README.md'
+homepage = 'https://github.com/nyuszika7h/vinetrimmer'
+repository = 'https://github.com/nyuszika7h/vinetrimmer'
+keywords = ['widevine', 'drm', 'download']
+classifiers = [
+    'Development Status :: 4 - Beta',
+    'Environment :: Console',
+    'Intended Audience :: End Users/Desktop',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Topic :: Multimedia :: Video',
+    'Topic :: Security :: Cryptography'
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+appdirs = "^1.4.4"
+beautifulsoup4 = "^4.8.2"
+click = "^8.0.1"
+coloredlogs = "^15.0"
+construct = "2.8.8"
+crccheck = "^1.0"
+httpx = "^0.23.0"
+jsonpickle = "^2.0.0"
+langcodes = { extras = ["data"], version = "^3.1.0" }
+lxml = "^4.6.3"
+m3u8 = "^0.9.0"
+pproxy = "^2.7.7"
+protobuf = "^3.13.0"
+pycaption = "^1.0.6"
+pycryptodomex = "^3.9.9"
+pyhulu = "^1.1.2"
+pymediainfo = "^5.0.3"
+pymysql = "^1.0.2"
+requests = { extras = ["socks"], version = "^2.26.0" }
+tldextract = "^3.1.0"
+toml = "^0.10.2"
+Unidecode = "^1.2.0"
+validators = "^0.18.2"
+websocket-client = "^1.1.0"
+yt-dlp = "^2021.8.2"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.8.4"
+isort = "^5.9.2"
+pyinstaller = "^4.4"
+
+[tool.poetry.scripts]
+vt = 'vinetrimmer.vinetrimmer:main'
+
+[tool.isort]
+line_length = 120
+classes = ['CTV', 'FPS', 'IO', 'iTunes', 'MP4', 'TVNOW']

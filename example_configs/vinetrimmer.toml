@@ -1,0 +1,88 @@
+# This is an example config file. You should copy it to the appropriate directory for your platform
+# and adjust values if necessary (see the README for details on where to put it).
+
+# Decrypter to use (packager or mp4decrypt)
+decrypter = "packager"
+# Group tag to add to releases
+tag = ""
+# Use a different tag for SD
+#tag_sd = ""
+
+# Override default values for arguments
+[arguments]
+#alang = "hu,orig"
+#slang = "hu,all"
+
+#[arguments.Amazon]
+#audio_quality = "SD"
+
+[aria2c]
+#file_allocation = "falloc"
+
+[cdm]
+# Local CDM device to use for decryption. Can be specified per-service and per-profile.
+default = "android_klp_x86"
+#Amazon = "xxx"
+
+#[cdm.Amazon]
+#us = "xxx"
+
+# Remote CDM API to use for decryption
+[[cdm_api]]
+name = "API"
+host = "https://api.example.com"
+key = "xxx"
+device = "xxx"
+type = ""  # ANDROID or CHROME
+system_id = 1234
+security_level = 1
+
+# Login details for each service
+[credentials.Amazon]
+#us = "email:password"
+
+[directories]
+# Default temp dir:
+#   Windows: %LOCALAPPDATA%\Temp\vinetrimmer or C:\TEMP\vinetrimmer
+#   macOS/Linux: /var/tmp
+temp = ""
+downloads = "~/Downloads/vinetrimmer"
+
+[[key_vaults]]
+# SQL databases to cache content keys to
+type = "local"
+name = "Local"
+path = "{data_dir}/key_store.db"
+
+#[[key_vaults]]
+#type = "remote"
+#name = "Example Vault"
+#host = "127.0.0.1"
+#database = "vault"
+#username = ""
+#password = ""
+
+# Customize output filenames
+[output_template]
+movies = "{title}.{year}.{quality}.{source}.WEB-DL.{audio}.{video}-{tag}"
+series = "{title}.{season_episode}.{episode_name}.{quality}.{source}.WEB-DL.{audio}.{video}-{tag}"
+# If this is false, the first audio track will be used to determine what audio tag to use.
+# If it"s true, the last audio track will be used instead.
+use_last_audio = false
+
+# Default profile to use for each service
+[profiles]
+default = "default"
+
+# A list of proxies that can be used with --proxy.
+# Note: UK should be "gb", not "uk".
+[proxies]
+#us = "http://username:password@example.com:8080"
+
+# If you use NordVPN, you can use this to automatically generate a proxy string.
+# The credentials should be your service credentials, not account credentials
+# (https://my.nordaccount.com/dashboard/nordvpn/ -> Advanced configuration).
+[nordvpn]
+username = ""
+password = ""
+#servers = { us = 12 }
